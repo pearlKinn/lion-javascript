@@ -2,8 +2,13 @@
 ---
 ## 자바스크립트 학습 저장소
 ---
-학습 주제별로 브랜치를 나눠 수업을 진행합니다.
-학습자료는 해당 브랜치로 이동 후 확인 할 수 있습니다.
 
-1. JavaScript Core Branch [바로가기](https://github.com/)
-2. JavaScript DOM Branch [바로가기](https://github.com/)
+학습이 완료된 항목은 체크박스로 표시됩니다.
+
+### Basic
+- [x] Core Structure [바로가기](https://github.com/)
+- [ ] Variable [바로가기](https://github.com/)
+- [ ] Strict Mode [바로가기](https://github.com/)
+- [ ] Global This [바로가기](https://github.com/)
+- [ ] Data Types [바로가기](https://github.com/)
+- [ ] Type Coversion [바로가기](https://github.com/)[바로가기](https://github.com/)
