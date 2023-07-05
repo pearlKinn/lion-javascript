@@ -7,8 +7,8 @@
 
 ### Basic
 - [x] Core Structure [바로가기](https://github.com/)
-- [ ] Variable [바로가기](https://github.com/)
-- [ ] Strict Mode [바로가기](https://github.com/)
-- [ ] Global This [바로가기](https://github.com/)
-- [ ] Data Types [바로가기](https://github.com/)
-- [ ] Type Coversion [바로가기](https://github.com/)[바로가기](https://github.com/)
+- [x] Variable [바로가기](https://github.com/)
+- [x] Strict Mode [바로가기](https://github.com/)
+- [x] Global This [바로가기](https://github.com/)
+- [x] Data Types [바로가기](https://github.com/)
+- [ ] Type Coversion [바로가기](https://github.com/)
