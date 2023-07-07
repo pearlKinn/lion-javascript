@@ -95,17 +95,26 @@ const randomUser = {
 // - for ~ in 문
 
 /* 
-for(let key in randomUser) {
-  if (({}).hasOwnproperty.call(randomUser[key])); {
+for(let key in randomUser){
+  
+  if (({}).hasOwnProperty.call(randomUser,key)) {
     let L1 = randomUser[key];
+    // console.log('L1 : ',L1)
+    if(typeof L1 === 'object'){
 
-    if(typeof L1 === 'object' ) {
-      for(let key in L1) {
-        if(({}).hasOwnproperty.call(L1, key)) {
+      for(let key in L1){
+        if (({}).hasOwnProperty.call(L1,key)) {
           let L2 = L1[key];
-          .
-          .
-          .
+          // console.log('\tL2 : ',L2)
+          if(typeof L2 === 'object'){
+            
+            for(let key in L2){
+              if (({}).hasOwnProperty.call(L2,key)) {
+                let L3 = L2[key];
+                // console.log('\t\tL3 : ',L3)
+              }
+            }
+          }
         }
       }
     }
@@ -125,21 +134,22 @@ for(let key in randomUser) {
 
 // console.log(Object.keys(randomUser)); // 모든 키 값을 배열로 반환
 
-for (let keyValue of Object.entries(randomUser)) {
+for(let keyValue of Object.entries(randomUser)){
   let key = keyValue[0];
   let value = keyValue[1];
-  console.log('L1 : ', value);
+  console.log('L1 : ',value);
 
-  if (typeof value === 'object') {
-    for (let keyValue of Object.entries(randomUser)) {
+  if(typeof value === 'object'){
+    for(let keyValue of Object.entries(value)){
       let key = keyValue[0];
       let value = keyValue[1];
-      console.log('L2 : ', value);
+      console.log('\tL2 : ',value)
+
       if (typeof value === 'object') {
-        for (let keyValue of Object.entries(randomUser)) {
+        for(let keyValue of Object.entries(value)){
           let key = keyValue[0];
           let value = keyValue[1];
-          console.log('L3 : ', value);
+          console.log('\t\tL3 : ',value)
         }
       }
     }
