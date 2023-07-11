@@ -96,9 +96,9 @@ const user = {
   totalGrades: function(){
      console.log(this.grades); //[80, 90, 100]
 //! forEach는 윈도우가 호출한 것이다!!!
-    //% this.grades.forEach(function(item) { // forEach문 안에 있는 일반함수라 우리가 원하는 this( user )를 찾을 수 없음!
-    //%     this.total += item;          // function을 호출한 대상이 forEach문이기 때문에 function의 this는 window가 됨
-    //%   })                                                                                                  
+    //% this.grades.forEach(function(item) { // forEach문 안에 있는 일반함수라 우리가 원하는 this( user )를 찾을 수 없음!  
+    //%     this.total += item;          // function을 호출한 대상이 forEach문이기 때문에 function의 this는 window가 됨 
+    //%   })                                                                                                   
 
     //^ this.grades.forEach((item) => { // 화살표 함수를 사용하면 실행 컨텍스트가 만들어지고 그 위에 부모인 user의 this를 물려 받게 된다.
     //^   this.total += item;                                                                                         
