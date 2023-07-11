@@ -80,3 +80,45 @@ let pow;
 
 // repeat(text: string, repeatCount: number): string;
 let repeat; 
+
+
+
+
+// 객체 안에서 this
+//! 객체의 메서드를 정의 할때는 화살표 함수보다 일반함수가 더 좋다!!
+//! 메서드 안에 함수를 호출 할 때는 화살표 함수가 더 좋다!!
+const user = {
+  total:0,
+  name: 'tiger',
+  age: 32,
+  address:'서울시 중랑구',
+  grades:[80,90,100],
+  totalGrades: function(){
+     console.log(this.grades); //[80, 90, 100]
+//! forEach는 윈도우가 호출한 것이다!!!
+    //% this.grades.forEach(function(item) { // forEach문 안에 있는 일반함수라 우리가 원하는 this( user )를 찾을 수 없음!
+    //%     this.total += item;          // function을 호출한 대상이 forEach문이기 때문에 function의 this는 window가 됨
+    //%   })                                                                                                  
+
+    //^ this.grades.forEach((item) => { // 화살표 함수를 사용하면 실행 컨텍스트가 만들어지고 그 위에 부모인 user의 this를 물려 받게 된다.
+    //^   this.total += item;                                                                                         
+    //^  })                                                                                                           
+    //^  console.log(this.total); //270                                                                               
+ 
+    //%  function sayHi() {
+    //%   console.log( this ); // 여기서의 this는 totalGrades가 아닌 window다!
+    //% }                      // use를 찾고 싶으면 화살표 함수 사용!!
+    //% sayHi() //user.sayHi()를 호출한 것이 아니라 그냥 호출된 것이기 때문에 윈도우가 호출한 것이다.
+
+    const sayHi = () => {
+      console.log( this ); //this => user
+    }
+    sayHi()
+  }
+  //^ 줄여쓰기 가능!! (일반함수이다) 
+  //^ totalGrades(){ 
+  //^    console.log(this.grades);
+  //^ }
+
+ 
+}
