@@ -34,7 +34,7 @@ class Tiger extends Animal {
   }
 
   hunt(target) {
-    this.#prey = target;
+    this.#prey = target; //ex) 외부에서 beom.prey로 접근 불가능 내부에서는 prey로 접근이 가능하다 
     return `${target}에게 조용히 접근한다.`;
   }
 
