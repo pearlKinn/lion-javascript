@@ -54,7 +54,7 @@
 - [x] prototype (생성자 함수) [바로가기](https://github.com/pearlKinn/lion-javascript/blob/01.core/client/chapter/core/12-2.prototype.js)
 
 ## Closure
-- [ ] Closure (클로저) [바로가기](https://github.com/pearlKinn/lion-javascript/blob/01.core/client/chapter/core/13.closure.js)
+- [x] Closure (클로저) [바로가기](https://github.com/pearlKinn/lion-javascript/blob/01.core/client/chapter/core/13.closure.js)
 
 
 

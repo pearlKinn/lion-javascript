@@ -16,13 +16,12 @@ let friends = '진승, 혜미, 송아, 혜운, 선용, 영은'.split(','); // sp
 //-- console.log(friends.length);
 
 // 배열 요소 변경
-friends[0] = '선범'
+friends[0] = '선범';
 
 // 배열 요소 추가
 let unshift = friends.unshift('진승');
 console.log(friends);
 let push = friends.push('돈균');
-
 
 // 배열 요소 제거
 let shift = friends.shift();
@@ -38,8 +37,18 @@ console.log(friends);
 // 배열 요소 순환(loop)
 // for 문, for ~ of문
 
+for (let i = 0; i < friends.length; i++) {
+  // console.log(friends[i]);
+}
+
+for (let value of friends) { // symbol.iterator가 있으면 사용 가능하다!!!
+  // console.log(value);
+}
+
 // 배열 복사
-let copiedArray;
+// let copiedArray = [...friends]; // 스프레드 신탁스
+// let copiedArray = friends.slice()
+let copiedArray = friends.toSorted()
 
 // 다차원 배열
 // 행렬을 저장하는 용도
@@ -49,5 +58,6 @@ const matrix = [
   [4, 5, 6],
   [7, 8, 9],
 ];
+
 
 // 행렬의 정중앙에 위치한 요소를 찾으려면?
