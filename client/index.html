@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./style.css" />
   <script src="./main.js"></script>
-  <script src="./chapter/core/21.tryCatch.js" defer></script>
+  <!-- 돔 js는 getNode.js에 종속성을 가짐 순서도 중요!  -->
+  <script src="./lib/dom/getNode.js"></script> 
+  <script src="./chapter/dom/01.BOM.js" defer></script>
   <title>범쌤과 함께하는 자바스크립트</title>
 </head>
 <body>
   <h1>
-    <span class="first">hello</span>
+    <span class="first" id="message">hello</span>
     <!-- 주석입니다. -->
     <span class="second">javascript</span>
   </h1>
