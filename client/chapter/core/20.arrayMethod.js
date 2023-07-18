@@ -196,9 +196,9 @@ console.log(filter);
 //^ reduce
 
 // 초기값이 없으면 reduce는 초기값을 아이템의 첫 번째 항목을 acc에 담는다
-const totalAge = people.reduce((acc, cur) => acc + cur.age, 0); // 초기값을 입력하지 않았을 때 객체가 초기값이 된다.
+const totalAge = people.reduce((acc, cur) => acc + cur.age); // 초기값을 입력하지 않았을 때 객체가 초기값이 된다.
 
-// console.log(totalAge);
+console.log(totalAge);
 
 const template = people.reduce(
   (htmlCode, cur) => htmlCode + `<div>${cur.name}</div>`,
@@ -214,8 +214,8 @@ const str = '봉석 윤잔 예나 시연 지만 저아';
 
 //^ split :문자 => 배열
 const stringToArray = str.split(' ')
-console.log(stringToArray);
+// console.log(stringToArray);
 
 //^ join 배열 => 문자
 const arrayToString = stringToArray.join('/')
-console.log(arrayToString);
+// console.log(arrayToString);
