@@ -12,8 +12,6 @@ function getAttr(node, prop) {
   return node.getAttribute(prop); //@ 값을 리턴하지 않으면 무조건 undefined
 }
 
-console.log(getAttr('.first', 'id'));
-
 //% setAttr 유틸함수
 function setAttr(node, prop, value) {
   // 넘어온 대상이 문자인지를 체크
@@ -35,7 +33,6 @@ function setAttr(node, prop, value) {
   node.setAttribute(prop, value); // 값을 반환할 필요가 없음
 }
 
-setAttr('.second', 'title', 'hi');
 /* -------------------------------------------------------------------------- */
 
 function attr(node, prop, value) {
