@@ -54,9 +54,13 @@ const data = ['빨래하기', '게임하기', '유튜브 보기', '산책하기'
 // 3. 생성된 태그를 내보내기(배열)
 // 4. 내보낸 배열 순환하기
 // 5. 반복문 안에서 랜더링 하기
-
+// 6. 랜더링
 const todoList = data.map((item) => { // 3번
   return `<li>${item}</li>`
 })
 
 todoList.forEach(element => todo.insertAdjacentHTML('beforeend', element));
+
+/* -------------------------------------------------------------------------- */
+
+insertLast('.todo', '<li>문자하기</li>')
