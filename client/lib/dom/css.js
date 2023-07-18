@@ -41,13 +41,14 @@ function setCss(node, prop, value) {
   node.style[prop] = value
 }
 
-function getCss(node, prop) {
+function getCss(node, prop) {//'font-size'.indexOf('-')
   if(typeof node === 'string') node = getNode(node)
   
   if(!(prop in document.body.style)) {
     throw new SyntaxError('getCss 함수의 두 번째 인자인 prop은 유효한 css 속성이 아닙니다')
   }
 
+  if(prop.indexOf('-') == -1) return getComputedStyle(node)[prop]
   return getComputedStyle(node).getPropertyValue(prop)
 }
 
