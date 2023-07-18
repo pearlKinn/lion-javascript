@@ -51,3 +51,4 @@ console.log(getComputedStyle(first).getPropertyValue('font-size')); // 32px
 css('.first', 'color', 'pink')
 
 console.log(css('.first', 'color'));
+console.log(css('.first', 'fontSize'));
