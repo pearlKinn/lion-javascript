@@ -1,39 +1,48 @@
-function insertBefore(node, text) {
-  if (typeof node === 'string') {
-    node = getNode(node);
+
+import { getNode } from "./getNode.js";
+
+export function insertBefore(node,text){
+  if(typeof node === 'string') node = getNode(node);
+  
+  if(node.nodeType !== document.ELEMENT_NODE){
+    throw new ReferenceError('insertBefore 함수의 첫 번째 인수는 ELEMENT NODE 이어야 합니다.');
   }
-  if(node.nodeType !== document.ELEMENT_NODE) {
-    throw new ReferenceError('insertBefore 함수의 첫 번째 인수는 ELEMENT NODE이어야 합니다')
-  }
-  return node.insertAdjacentHTML('beforebegin', text)
+  node.insertAdjacentHTML('beforebegin',text);
 }
 
-function insertFirst(node, text) {
-  if (typeof node === 'string') {
-    node = getNode(node);
+export function insertFirst(node,text){
+  if(typeof node === 'string') node = getNode(node);
+  
+  if(node.nodeType !== document.ELEMENT_NODE){
+    throw new ReferenceError('insertFirst 함수의 첫 번째 인수는 ELEMENT NODE 이어야 합니다.');
   }
-  if(node.nodeType !== document.ELEMENT_NODE) {
-    throw new ReferenceError('insertFirst 함수의 첫 번째 인수는 ELEMENT NODE이어야 합니다')
-  }
-  return node.insertAdjacentHTML('afterbegin', text)
+  node.insertAdjacentHTML('afterbegin',text);
 }
 
-function insertLast(node, text) {
-  if (typeof node === 'string') {
-    node = getNode(node);
+export function insertLast(node,text){
+  if(typeof node === 'string') node = getNode(node);
+  
+  if(node.nodeType !== document.ELEMENT_NODE){
+    throw new ReferenceError('insertLast 함수의 첫 번째 인수는 ELEMENT NODE 이어야 합니다.');
   }
-  if(node.nodeType !== document.ELEMENT_NODE) {
-    throw new ReferenceError('insertLast 함수의 첫 번째 인수는 ELEMENT NODE이어야 합니다')
-  }
-  return node.insertAdjacentHTML('beforeend', text)
+  node.insertAdjacentHTML('beforeend',text);
 }
 
-function insertAfter(node, text) {
-  if (typeof node === 'string') {
-    node = getNode(node);
+export function insertAfter(node,text){
+  if(typeof node === 'string') node = getNode(node);
+  
+  if(node.nodeType !== document.ELEMENT_NODE){
+    throw new ReferenceError('insertAfter 함수의 첫 번째 인수는 ELEMENT NODE 이어야 합니다.');
   }
-  if(node.nodeType !== document.ELEMENT_NODE) {
-    throw new ReferenceError('insertAfter 함수의 첫 번째 인수는 ELEMENT NODE이어야 합니다')
-  }
-  return node.insertAdjacentHTML('afterend', text)
+  node.insertAdjacentHTML('afterend',text);
 }
+
+
+// TDD
+
+
+
+// beforebegin => insertBefore
+// afterbegin  => insertFirst
+// beforeend   => insertLast
+// afterend    => insertAfter

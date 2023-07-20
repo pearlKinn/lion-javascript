@@ -1,4 +1,9 @@
+import { getNode, clearContents, insertLast } from './lib/index.js';
+
+
+
 // JavaScript
+
 const first = getNode('#firstNumber');
 const second = getNode('#secondNumber');
 const result = getNode('.result');
@@ -16,7 +21,8 @@ function handleInput() {
   // 3. 화면 출력하기
   insertLast(result, total);
 }
-function handleClear() {
+function handleClear(e) {
+  e.preventDefault();
   clearContents(first)
   clearContents(second)
   result.textContent = '-'

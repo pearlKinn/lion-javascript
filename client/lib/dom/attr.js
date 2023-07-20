@@ -1,3 +1,4 @@
+import { getNode } from "./getNode.js";
 //% getAttr라는 유틸함수 만들기
 function getAttr(node, prop) {
   // 넘어온 대상이 문자인지를 체크
@@ -35,7 +36,7 @@ function setAttr(node, prop, value) {
 
 /* -------------------------------------------------------------------------- */
 
-function attr(node, prop, value) {
+export function attr(node, prop, value) {
  
   //% if(!value) {                
   //%   return getAttr(node, prop)
