@@ -2,34 +2,34 @@
 /* DOM Node Class                 */
 /* ------------------------------ */
 
-//^ Object
-//^   ↓
-//^ EventTarget
-//^ - 이벤트 관련 기능을 제공
-//^   ↓
-//^ Node
-//^ - 공통 DOM 노드 프로퍼티를 제공
-//^   | —————————————————————————————————————————
-//^   ↓                    ↓                    ↓
-//^ Element              Text                Comment
-//^ - 요소 노드 메서드를 제공
-//^   | ————————————————————
-//^   ↓                    ↓
-//^ HTMLElement       SVGElement
-//^ - HTML 요소 메서드와 getter, setter를 제공
-//^   | —————————————————————————————————————————
-//^   ↓                    ↓                    ↓
-//^ HTMLBodyElement  HTMLDivElement     HTMLButtonElement
+//^ Object                                                  
+//^   ↓                                                     
+//^ EventTarget                                             
+//^ - 이벤트 관련 기능을 제공                                    
+//^   ↓                                                     
+//^ Node                                                    
+//^ - 공통 DOM 노드 프로퍼티를 제공                               
+//^   | —————————————————————————————————————————           
+//^   ↓                    ↓                    ↓           
+//^ Element              Text                Comment        
+//^ - 요소 노드 메서드를 제공                                    
+//^   | ————————————————————                                
+//^   ↓                    ↓                                
+//^ HTMLElement       SVGElement                            
+//^ - HTML 요소 메서드와 getter, setter를 제공                   
+//^   | —————————————————————————————————————————           
+//^   ↓                    ↓                    ↓           
+//^ HTMLBodyElement  HTMLDivElement     HTMLButtonElement   
 
 /* ------------------------------------------------------------------------ */
 
 //% EventTarget – EventTarget가 모든 DOM 노드의 베이스에 있기때문에 DOM 노드에서 '이벤트’를 사용할 수 있습니다.
 
 //% Node – getter 역할을 하는 parentNode, nextSibling, childNodes 등의 주요 트리 탐색 기능을 제공합니다.
-//%        Text 클래스, Element 클래스, Comment클래스는 Node클래스를 상속받습니다.
+//% Text 클래스, Element 클래스, Comment클래스는 Node클래스를 상속받습니다.
 
 //% Element – nextElementSibling, children 이나 getElementsByTagName, querySelector 같이 요소 전용 탐색을 도와주는 프로퍼티나 메서드가 이를 기반으로 합니다.
-//%           SVGElement, XMLElement, HTMLElement 클래스의 [베이스] 역할을 합니다.
+//% SVGElement, XMLElement, HTMLElement 클래스의 [베이스] 역할을 합니다.
 
 //% HTMLElement – HTML 요소 노드의 베이스 역할을 하는 클래스입니다.
 //%               HTMLInputElement – <input> 요소에 대응하는 클래스
@@ -41,18 +41,18 @@
 const first = getNode('.first');
 // - nodeType
 console.log(first.nodeType === document.ELEMENT_NODE); //true
-console.log(first.nodeType === 1);
+console.log(first.nodeType === 1); //true
 
 // - nodeName (vs. tagName)
-console.log(first.nodeName === 'SPAN');
-console.log(first.tagName === 'SPAN');
+console.log(first.nodeName === 'SPAN'); //true
+console.log(first.tagName === 'SPAN'); //true
 
 /* 노드 콘텐츠 읽기/쓰기 ---------------------------------------------------- */
 
 // - innerHTML
 // * 기존 내용 삭제
 // * 기존 내용과 새로운 내용을 합친 새로운 내용을 씀
-first.innerHTML = '<div>helloooooooo</div>'; //html을 추가하는 것이기 때문에 위험하다
+//! first.parentNode.innerHTML = '<div>helloooooooo</div>'; //html을 추가하는 것이기 때문에 위험하다 
 
 // - textContent
 // * 요소 내의 텍스트에 접근

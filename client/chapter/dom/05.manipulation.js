@@ -34,10 +34,16 @@ const body = document.body;
 const h1 = getNode('h1')
 const todo = getNode('.todo')
 
-const template = /*html*/`<div class = "box">${ 10 + 30 }</div>`
+const bb = /*html*/`<div class = "box">${ 'beforebegin' }</div>`
+const ab = /*html*/`<div class = "box">${ 'afterbegin' }</div>`
+const be = /*html*/`<div class = "box">${ 'beforeend' }</div>`
+const ae = /*html*/`<div class = "box">${ 'afterend' }</div>`
 
 // body.insertAdjacentHTML('beforeend', '<div class="box"> 상자 </div>')
-// h1.insertAdjacentHTML('afterbegin', template)
+h1.insertAdjacentHTML('beforebegin', bb)
+h1.insertAdjacentHTML('afterbegin', ab)
+h1.insertAdjacentHTML('beforeend', be)
+h1.insertAdjacentHTML('afterend', ae)
 
 //% - insertAdjacentElement
 //% - insertAdjacentText
@@ -63,4 +69,4 @@ todoList.forEach(element => todo.insertAdjacentHTML('beforeend', element));
 
 /* -------------------------------------------------------------------------- */
 
-insertLast('.todo', '<li>문자하기</li>')
+// insertLast('.todo', '<li>문자하기</li>')

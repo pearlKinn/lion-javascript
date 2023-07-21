@@ -6,7 +6,7 @@
 
 const first = getNode('.first');
 console.log(first.className); // getter
-// console.log(first.className = 'box'); // setter
+// console.log(first.className = 'box'); // setter 
 // console.log(first.className = 'box second'); // setter 두개도 가능
 
 

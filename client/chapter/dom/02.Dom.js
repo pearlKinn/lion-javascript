@@ -40,7 +40,7 @@ const [firstSpan, secondSpan] = getNodes('span')
 console.log(secondSpan);
 
 //% - closest => 부모를 찾아가는 거임 
-// console.log(first.closest('h1'));
+console.log(first.closest('h1'));
 
 /* 문서 대상 확인 */
 //% - matches 
@@ -52,3 +52,5 @@ console.log(secondSpan);
 
 //% 클래스를 포함하고 있어?
 //% node.classList.contains()
+
+const h1 = getNode('h1')

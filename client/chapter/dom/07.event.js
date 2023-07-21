@@ -45,18 +45,18 @@ function handler() {
 
 // const remove = bindEvent('.first', 'click', handler);
 
-const ground = getNode('.ground')
-const ball = getNode('#ball')
+// const ground = getNode('.ground')
+// const ball = getNode('#ball')
 
-function handlerClick(e) {
-  let x = e.offsetX
-  let y = e.offsetY
+// function handlerClick(e) {
+//   let x = e.offsetX
+//   let y = e.offsetY
 
-  ball.style.transform = `translate(${x - (ball.offsetWidth / 2)}px, ${y - (ball.offsetHeight / 2)}px)`
-  console.log(e.offsetX, e.offsetY);
-}
+//   ball.style.transform = `translate(${x - (ball.offsetWidth / 2)}px, ${y - (ball.offsetHeight / 2)}px)`
+//   console.log(e.offsetX, e.offsetY);
+// }
 
-ground.addEventListener('click', handlerClick)
+// ground.addEventListener('click', handlerClick)
 
 function debounce(callback, limit = 100) {
   let timeout
@@ -83,20 +83,20 @@ function throttle(callback, limit = 100) {
 }
 
 
-ground.addEventListener('click',handleClick);
+// ground.addEventListener('click',handleClick);
 
 
 // throttle debounce
 
-ground.addEventListener('mousemove',debounce((e)=>{
-  let x = e.offsetX;
-  let y = e.offsetY;
+// ground.addEventListener('mousemove',debounce((e)=>{
+//   let x = e.offsetX;
+//   let y = e.offsetY;
 
-  let template = `
-    <div class="emotion" style="top:${y}px;left:${x}px">😍</div>
-  `
+//   let template = `
+//     <div class="emotion" style="top:${y}px;left:${x}px">😍</div>
+//   `
 
-  insertLast(ground,template)
-}));
+//   insertLast(ground,template)
+// }));
 
 

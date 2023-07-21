@@ -39,10 +39,10 @@ first.setAttribute('title', '메시지');
 console.log(first.getAttribute('class')); // 기존의 값이 사라지고 second로 대체된다.
 
 //^ - elementNode.removeAttribute(name) – 속성값을 지움
-first.removeAttribute('title');
+// first.removeAttribute('title');
 
 //^ - elementNode.attributes – 열거 가능한(iterable) 속성 집합을 반환함
-console.log(first.attributes); //NamedNodeMap {0: class, 1: id, 2: size, class: class, id: id, size: size, length: 3}
+console.log(first.attributes); //NamedNodeMap{0: class, 1: id, 2: size, class: class, id: id, size: size, length: 3}
 
 /* 비표준 속성, 프로퍼티 설정 ------------------------------------------------- */
 
@@ -51,8 +51,11 @@ console.log(first.attributes); //NamedNodeMap {0: class, 1: id, 2: size, class:
 
 //^ - elementNode.dataset
 //! html에 케밥형식으로 작성하면 .dataset에서 카멜케이스로 나온다.
+first.dataset.animation = 'paused'; // 속성 추가 (setter)
+first.dataset.jinjuGyuho = '0728'; // 속성 추가 (setter)
 console.log(first.dataset); // elementNode.dataset이라는 프로퍼티 안에 data-로 쓴 모든 속성값이 나온다
-console.log(first.dataset.size); // 10 (getter)
+console.log(first.dataset.jinjuGyuho); // 10 (getter)
 console.log(first.dataset.tabIndex); // 0 (getter)
 
-first.dataset.animation = 'paused'; // 속성 추가 (setter)
+
+
