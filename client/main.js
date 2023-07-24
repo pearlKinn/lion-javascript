@@ -63,13 +63,18 @@ function handleSubmit(e) {
 // state =true
 // if(state) {}
 
-
 function handleCopy() {
   const text = resultArea.textContent;
-
-  copy(text).then(() => {
-    showAlert('.alert-success', '클립보드 복사 완료');
-  });
+  let state = Boolean(nameField.value.replace(/\s*/g, '')) && Boolean(isNaN(Number(nameField.value)));
+  console.log(state);
+  if (!state) {
+    showAlert('.alert-error', '이름을 입력해 주세요!!', 2000);
+    
+  } else {
+    copy(text).then(() => {
+      showAlert('.alert-success', '클립보드 복사 완료');
+    });
+  }
 }
 
 submit.addEventListener('click', handleSubmit);
