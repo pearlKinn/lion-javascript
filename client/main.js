@@ -65,8 +65,8 @@ function handleSubmit(e) {
 
 function handleCopy() {
   const text = resultArea.textContent;
-  let state = Boolean(nameField.value.replace(/\s*/g, '')) && Boolean(isNaN(Number(nameField.value)));
-  console.log(state);
+  let state = Boolean(nameField.value.replace(/\s*/g, '')) && Boolean(isNaN(+(nameField.value)));
+
   if (!state) {
     showAlert('.alert-error', '이름을 입력해 주세요!!', 2000);
     
