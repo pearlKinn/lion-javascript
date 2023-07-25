@@ -1,12 +1,13 @@
 import {
   attr,
-  clearContents,
-  diceAnimation,
-  endScroll,
+  memo,
   getNode,
   getNodes,
+  endScroll,
   insertLast,
   removeClass,
+  diceAnimation,
+  clearContents,
 } from './lib/index.js';
 
 //^ [phase-1] 주사위 굴리기
@@ -30,7 +31,9 @@ import {
 
 const [startButton, recordButton, resetButton] = getNodes( '.buttonGroup > button' );
 const recordListWrapper = getNode('.recordListWrapper');
-const tbody = getNode('.recordList tbody');
+// const tbody = getNode('.recordList tbody');
+memo('@tbody', () => getNode('.recordList tbody')) // setter
+// memo('@tbody') // getter
 let turn = 0;
 let total = 0;
 
@@ -45,8 +48,8 @@ function createItem(value) {
   `;
 }
 function renderRecordItem() {
-  const diceValue = +attr('#cube', 'data-dice');
-  insertLast(tbody, createItem(diceValue));
+  const diceValue = +attr(memo('cube'), 'data-dice');
+  insertLast(memo('@tbody'), createItem(diceValue));
   endScroll(recordListWrapper)
 }
 
@@ -84,7 +87,7 @@ function handleReset() {
   recordButton.disabled = true;
   resetButton.disabled = true;
 
-  clearContents(tbody)
+  clearContents(memo('@tbody'))
 
   turn = 0; 
   total = 0;
