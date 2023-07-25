@@ -1,5 +1,3 @@
-console.log('hello js');
+import { xhr } from './lib/index.js';
 
-const a = 10;
-
-const b = 10;
+// xhr.get('')
